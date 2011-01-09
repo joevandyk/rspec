@@ -52,7 +52,7 @@ module Spec
       )
       attr_reader :colour, :differ_class, :files, :examples, :example_groups
       attr_writer :drb_port
-      
+
       def initialize(error_stream, output_stream)
         @error_stream = error_stream
         @output_stream = output_stream
@@ -294,7 +294,7 @@ module Spec
       def drb_port
         @drb_port.to_i if defined?(@drb_port)
       end
-      
+
     protected
 
       def define_predicate_matchers
@@ -366,7 +366,7 @@ module Spec
       end
 
       def sorted_files
-        return sorter ? files.sort(&sorter) : files
+        return sorter ? files.sort(&sorter) : files.sort
       end
 
       def sorter
